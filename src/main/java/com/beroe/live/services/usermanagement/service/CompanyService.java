@@ -25,12 +25,6 @@ public interface CompanyService {
      */
     List<CompanyDTO> findAll();
     /**
-     * Get all the CompanyDTO where UserProfile is null.
-     *
-     * @return the list of entities
-     */
-    List<CompanyDTO> findAllWhereUserProfileIsNull();
-    /**
      * Get all the CompanyDTO where Invitation is null.
      *
      * @return the list of entities

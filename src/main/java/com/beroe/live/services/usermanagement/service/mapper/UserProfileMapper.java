@@ -14,8 +14,8 @@ public interface UserProfileMapper extends EntityMapper<UserProfileDTO, UserProf
     @Mapping(source = "company.id", target = "companyId")
     UserProfileDTO toDto(UserProfile userProfile);
 
-    @Mapping(source = "companyId", target = "company")
     @Mapping(target = "userStates", ignore = true)
+    @Mapping(source = "companyId", target = "company")
     @Mapping(target = "invitation", ignore = true)
     UserProfile toEntity(UserProfileDTO userProfileDTO);
 

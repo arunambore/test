@@ -13,8 +13,8 @@ public interface CompanyMapper extends EntityMapper<CompanyDTO, Company> {
 
 
     @Mapping(target = "companyDomains", ignore = true)
-    @Mapping(target = "userProfile", ignore = true)
     @Mapping(target = "invitation", ignore = true)
+    @Mapping(target = "userProfiles", ignore = true)
     Company toEntity(CompanyDTO companyDTO);
 
     default Company fromId(Long id) {

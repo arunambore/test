@@ -1,6 +1,7 @@
 package com.beroe.live.services.usermanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -43,12 +44,13 @@ public class UserProfile implements Serializable {
     @Column(name = "title")
     private String title;
 
-    @OneToOne    @JoinColumn(unique = true)
-    private Company company;
-
     @OneToMany(mappedBy = "userProfile")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<UserState> userStates = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("userProfiles")
+    private Company company;
+
     @OneToOne(mappedBy = "userProfile")
     @JsonIgnore
     private Invitation invitation;
@@ -114,19 +116,6 @@ public class UserProfile implements Serializable {
         this.title = title;
     }
 
-    public Company getCompany() {
-        return company;
-    }
-
-    public UserProfile company(Company company) {
-        this.company = company;
-        return this;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
     public Set<UserState> getUserStates() {
         return userStates;
     }
@@ -150,6 +139,19 @@ public class UserProfile implements Serializable {
 
     public void setUserStates(Set<UserState> userStates) {
         this.userStates = userStates;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public UserProfile company(Company company) {
+        this.company = company;
+        return this;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Invitation getInvitation() {
