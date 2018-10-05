@@ -1,0 +1,46 @@
+{
+    "name": "Company",
+    "fields": [
+        {
+            "fieldName": "companyName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyDomain",
+            "otherEntityName": "companyDomain",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "userProfile",
+            "otherEntityName": "userProfile",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "invitation",
+            "otherEntityName": "invitation",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "company"
+        }
+    ],
+    "changelogDate": "20181005100034",
+    "javadoc": "Entity CompanyInfo\nIt represents companies representing suppliers as well as procurement user company",
+    "entityTableName": "company",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Invitation.
+    -->
+    <changeSet id="20181005100036-1" author="jhipster">
+        <createTable tableName="invitation" remarks="Entity Invitation">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="jhi_key" type="varchar(255)" remarks="Key is UUID which can be used to fetch details about all the child SupplierDataRequests It could be sent in the email and is used to populate the request details for the company user">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="pin" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="invitation_date" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="valid_till" type="date" remarks="validTill represents the date till when this invitation is vaild. If someone tries to onboard after this date, registration will be rejected.">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_invalid" type="bit" remarks="If we need to deactivate / invalidate any invitation, set its isInvalid attribute to true">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_profile_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_invitation_user_profile_id" />
+            </column>            <column name="company_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_invitation_company_id" />
+            </column>            <column name="supplier_invitation_details_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_invitation_supplier_invitation_details_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

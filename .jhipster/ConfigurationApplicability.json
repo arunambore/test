@@ -1,0 +1,31 @@
+{
+    "name": "ConfigurationApplicability",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "systemConfiguration",
+            "otherEntityName": "systemConfiguration",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181005100033",
+    "entityTableName": "configuration_applicability",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

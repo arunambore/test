@@ -42,6 +42,17 @@ public class CacheConfiguration {
             cm.createCache(com.beroe.live.services.usermanagement.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.beroe.live.services.usermanagement.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.beroe.live.services.usermanagement.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.UserProfile.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.UserProfile.class.getName() + ".userStates", jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.UserState.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.SystemConfiguration.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.SystemConfiguration.class.getName() + ".configurationApplicabilities", jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.ConfigurationApplicability.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.Company.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.Company.class.getName() + ".companyDomains", jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.CompanyDomain.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.Invitation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.SupplierInvitationDetails.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
