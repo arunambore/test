@@ -1,0 +1,35 @@
+{
+    "name": "UserState",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "userProfile",
+            "otherEntityName": "userProfile",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181005100031",
+    "entityTableName": "user_state",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

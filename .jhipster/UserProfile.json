@@ -1,0 +1,62 @@
+{
+    "name": "UserProfile",
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "uuid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "userProfile"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "userState",
+            "otherEntityName": "userState",
+            "otherEntityRelationshipName": "userProfile"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "invitation",
+            "otherEntityName": "invitation",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "userProfile"
+        }
+    ],
+    "changelogDate": "20181005100030",
+    "javadoc": "Entity UserProfile\nAll the user related information apart from password",
+    "entityTableName": "user_profile",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

@@ -1,0 +1,38 @@
+{
+    "name": "SystemConfiguration",
+    "fields": [
+        {
+            "fieldName": "key",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "configurationApplicability",
+            "otherEntityName": "configurationApplicability",
+            "otherEntityRelationshipName": "systemConfiguration"
+        }
+    ],
+    "changelogDate": "20181005100032",
+    "entityTableName": "system_configuration",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

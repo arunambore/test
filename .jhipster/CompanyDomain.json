@@ -1,0 +1,32 @@
+{
+    "name": "CompanyDomain",
+    "fields": [
+        {
+            "fieldName": "domain",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181005100035",
+    "javadoc": "Entity CompanyDomain",
+    "entityTableName": "company_domain",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

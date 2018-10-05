@@ -1,0 +1,41 @@
+{
+    "name": "SupplierInvitationDetails",
+    "fields": [
+        {
+            "fieldName": "supplierDataProviderKey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataProvider",
+            "fieldType": "SupplierDataProvider",
+            "fieldValues": "DNB,DVB",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "invitation",
+            "otherEntityName": "invitation",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "supplierInvitationDetails"
+        }
+    ],
+    "changelogDate": "20181005100037",
+    "javadoc": "Entity",
+    "entityTableName": "supplier_invitation_details",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}

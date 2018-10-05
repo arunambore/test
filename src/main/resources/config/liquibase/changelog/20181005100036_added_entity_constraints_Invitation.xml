@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Invitation.
+    -->
+    <changeSet id="20181005100036-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_profile_id"
+                                 baseTableName="invitation"
+                                 constraintName="fk_invitation_user_profile_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_profile"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="invitation"
+                                 constraintName="fk_invitation_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+        <addForeignKeyConstraint baseColumnNames="supplier_invitation_details_id"
+                                 baseTableName="invitation"
+                                 constraintName="fk_invitation_supplier_invitation_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="supplier_invitation_details"/>
+
+    </changeSet>
+</databaseChangeLog>

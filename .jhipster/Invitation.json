@@ -1,0 +1,72 @@
+{
+    "name": "Invitation",
+    "fields": [
+        {
+            "fieldName": "key",
+            "javadoc": "Key is UUID which can be used to fetch details about all the child SupplierDataRequests\n\nIt could be sent in the email and is used to populate the request details for the company user",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pin",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "invitationDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "validTill",
+            "javadoc": "validTill represents the date till when this invitation is vaild. If someone tries to onboard after this date, registration will be rejected.",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "isInvalid",
+            "javadoc": "If we need to deactivate / invalidate any invitation, set its isInvalid attribute to true",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "userProfile",
+            "otherEntityName": "userProfile",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "invitation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "invitation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "supplierInvitationDetails",
+            "otherEntityName": "supplierInvitationDetails",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "invitation"
+        }
+    ],
+    "changelogDate": "20181005100036",
+    "javadoc": "Entity Invitation",
+    "entityTableName": "invitation",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "usermanagement",
+    "applications": "*",
+    "angularJSSuffix": "livex",
+    "microserviceName": "usermanagement"
+}
