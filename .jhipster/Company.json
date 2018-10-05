@@ -18,16 +18,15 @@
         },
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "userProfile",
-            "otherEntityName": "userProfile",
+            "relationshipName": "invitation",
+            "otherEntityName": "invitation",
             "ownerSide": false,
             "otherEntityRelationshipName": "company"
         },
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "invitation",
-            "otherEntityName": "invitation",
-            "ownerSide": false,
+            "relationshipType": "one-to-many",
+            "relationshipName": "userProfile",
+            "otherEntityName": "userProfile",
             "otherEntityRelationshipName": "company"
         }
     ],

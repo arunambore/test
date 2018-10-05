@@ -67,21 +67,6 @@ public class CompanyServiceImpl implements CompanyService {
 
 
     /**
-     *  get all the companies where UserProfile is null.
-     *  @return the list of entities
-     */
-    @Transactional(readOnly = true) 
-    public List<CompanyDTO> findAllWhereUserProfileIsNull() {
-        log.debug("Request to get all companies where UserProfile is null");
-        return StreamSupport
-            .stream(companyRepository.findAll().spliterator(), false)
-            .filter(company -> company.getUserProfile() == null)
-            .map(companyMapper::toDto)
-            .collect(Collectors.toCollection(LinkedList::new));
-    }
-
-
-    /**
      *  get all the companies where Invitation is null.
      *  @return the list of entities
      */

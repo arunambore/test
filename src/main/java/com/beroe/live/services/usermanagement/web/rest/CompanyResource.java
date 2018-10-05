@@ -87,10 +87,6 @@ public class CompanyResource {
     @GetMapping("/companies")
     @Timed
     public List<CompanyDTO> getAllCompanies(@RequestParam(required = false) String filter) {
-        if ("userprofile-is-null".equals(filter)) {
-            log.debug("REST request to get all Companys where userProfile is null");
-            return companyService.findAllWhereUserProfileIsNull();
-        }
         if ("invitation-is-null".equals(filter)) {
             log.debug("REST request to get all Companys where invitation is null");
             return companyService.findAllWhereInvitationIsNull();

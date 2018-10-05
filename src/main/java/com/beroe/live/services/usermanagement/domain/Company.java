@@ -38,12 +38,11 @@ public class Company implements Serializable {
     private Set<CompanyDomain> companyDomains = new HashSet<>();
     @OneToOne(mappedBy = "company")
     @JsonIgnore
-    private UserProfile userProfile;
-
-    @OneToOne(mappedBy = "company")
-    @JsonIgnore
     private Invitation invitation;
 
+    @OneToMany(mappedBy = "company")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<UserProfile> userProfiles = new HashSet<>();
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -91,19 +90,6 @@ public class Company implements Serializable {
         this.companyDomains = companyDomains;
     }
 
-    public UserProfile getUserProfile() {
-        return userProfile;
-    }
-
-    public Company userProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
-        return this;
-    }
-
-    public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
-    }
-
     public Invitation getInvitation() {
         return invitation;
     }
@@ -115,6 +101,31 @@ public class Company implements Serializable {
 
     public void setInvitation(Invitation invitation) {
         this.invitation = invitation;
+    }
+
+    public Set<UserProfile> getUserProfiles() {
+        return userProfiles;
+    }
+
+    public Company userProfiles(Set<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
+        return this;
+    }
+
+    public Company addUserProfile(UserProfile userProfile) {
+        this.userProfiles.add(userProfile);
+        userProfile.setCompany(this);
+        return this;
+    }
+
+    public Company removeUserProfile(UserProfile userProfile) {
+        this.userProfiles.remove(userProfile);
+        userProfile.setCompany(null);
+        return this;
+    }
+
+    public void setUserProfiles(Set<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
