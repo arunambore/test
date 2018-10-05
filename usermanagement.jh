@@ -81,7 +81,6 @@ enum SupplierDataProvider {
 }
 
 relationship OneToOne {
-	UserProfile to Company,
 	Invitation to UserProfile,
     Invitation to Company,
     Invitation to SupplierInvitationDetails
@@ -93,7 +92,9 @@ relationship OneToMany {
     SystemConfiguration to ConfigurationApplicability
 }
 
-
+relationship ManyToOne{
+	UserProfile to Company
+}
 
 
 // Set pagination options
