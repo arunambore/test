@@ -15,6 +15,8 @@ public class UserStateDTO implements Serializable {
     @NotNull
     private String state;
 
+    private String value;
+
     private LocalDate date;
 
     private Long userProfileId;
@@ -33,6 +35,14 @@ public class UserStateDTO implements Serializable {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public LocalDate getDate() {
@@ -77,6 +87,7 @@ public class UserStateDTO implements Serializable {
         return "UserStateDTO{" +
             "id=" + getId() +
             ", state='" + getState() + "'" +
+            ", value='" + getValue() + "'" +
             ", date='" + getDate() + "'" +
             ", userProfile=" + getUserProfileId() +
             "}";
