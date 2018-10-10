@@ -9,6 +9,10 @@
             ]
         },
         {
+            "fieldName": "value",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "date",
             "fieldType": "LocalDate"
         }

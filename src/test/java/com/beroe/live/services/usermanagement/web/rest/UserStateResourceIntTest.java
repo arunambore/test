@@ -47,6 +47,9 @@ public class UserStateResourceIntTest {
     private static final String DEFAULT_STATE = "AAAAAAAAAA";
     private static final String UPDATED_STATE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_VALUE = "AAAAAAAAAA";
+    private static final String UPDATED_VALUE = "BBBBBBBBBB";
+
     private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
 
@@ -95,6 +98,7 @@ public class UserStateResourceIntTest {
     public static UserState createEntity(EntityManager em) {
         UserState userState = new UserState()
             .state(DEFAULT_STATE)
+            .value(DEFAULT_VALUE)
             .date(DEFAULT_DATE);
         return userState;
     }
@@ -121,6 +125,7 @@ public class UserStateResourceIntTest {
         assertThat(userStateList).hasSize(databaseSizeBeforeCreate + 1);
         UserState testUserState = userStateList.get(userStateList.size() - 1);
         assertThat(testUserState.getState()).isEqualTo(DEFAULT_STATE);
+        assertThat(testUserState.getValue()).isEqualTo(DEFAULT_VALUE);
         assertThat(testUserState.getDate()).isEqualTo(DEFAULT_DATE);
     }
 
@@ -175,6 +180,7 @@ public class UserStateResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(userState.getId().intValue())))
             .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE.toString())))
+            .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE.toString())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
     
@@ -190,6 +196,7 @@ public class UserStateResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(userState.getId().intValue()))
             .andExpect(jsonPath("$.state").value(DEFAULT_STATE.toString()))
+            .andExpect(jsonPath("$.value").value(DEFAULT_VALUE.toString()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()));
     }
 
@@ -215,6 +222,7 @@ public class UserStateResourceIntTest {
         em.detach(updatedUserState);
         updatedUserState
             .state(UPDATED_STATE)
+            .value(UPDATED_VALUE)
             .date(UPDATED_DATE);
         UserStateDTO userStateDTO = userStateMapper.toDto(updatedUserState);
 
@@ -228,6 +236,7 @@ public class UserStateResourceIntTest {
         assertThat(userStateList).hasSize(databaseSizeBeforeUpdate);
         UserState testUserState = userStateList.get(userStateList.size() - 1);
         assertThat(testUserState.getState()).isEqualTo(UPDATED_STATE);
+        assertThat(testUserState.getValue()).isEqualTo(UPDATED_VALUE);
         assertThat(testUserState.getDate()).isEqualTo(UPDATED_DATE);
     }
 

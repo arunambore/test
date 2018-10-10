@@ -29,6 +29,9 @@ public class UserState implements Serializable {
     @Column(name = "state", nullable = false)
     private String state;
 
+    @Column(name = "jhi_value")
+    private String value;
+
     @Column(name = "jhi_date")
     private LocalDate date;
 
@@ -56,6 +59,19 @@ public class UserState implements Serializable {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public UserState value(String value) {
+        this.value = value;
+        return this;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public LocalDate getDate() {
@@ -110,6 +126,7 @@ public class UserState implements Serializable {
         return "UserState{" +
             "id=" + getId() +
             ", state='" + getState() + "'" +
+            ", value='" + getValue() + "'" +
             ", date='" + getDate() + "'" +
             "}";
     }
