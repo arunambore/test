@@ -15,6 +15,7 @@ entity UserProfile {
 
 entity UserState {
 	state String required
+    value String
     date LocalDate
 }
 
