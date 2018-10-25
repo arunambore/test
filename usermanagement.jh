@@ -7,7 +7,7 @@
  * All the user related information apart from password
  */
 entity UserProfile {
-	email String required
+	email String required unique
     uuid String required
 	fullName String
 	title String
