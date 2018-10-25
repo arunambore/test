@@ -25,9 +25,9 @@ public class CompanyDomainServiceImpl implements CompanyDomainService {
 
     private final Logger log = LoggerFactory.getLogger(CompanyDomainServiceImpl.class);
 
-    private final CompanyDomainRepository companyDomainRepository;
+    private CompanyDomainRepository companyDomainRepository;
 
-    private final CompanyDomainMapper companyDomainMapper;
+    private CompanyDomainMapper companyDomainMapper;
 
     public CompanyDomainServiceImpl(CompanyDomainRepository companyDomainRepository, CompanyDomainMapper companyDomainMapper) {
         this.companyDomainRepository = companyDomainRepository;

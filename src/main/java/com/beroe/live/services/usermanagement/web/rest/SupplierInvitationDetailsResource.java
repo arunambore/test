@@ -30,7 +30,7 @@ public class SupplierInvitationDetailsResource {
 
     private static final String ENTITY_NAME = "usermanagementSupplierInvitationDetails";
 
-    private final SupplierInvitationDetailsService supplierInvitationDetailsService;
+    private SupplierInvitationDetailsService supplierInvitationDetailsService;
 
     public SupplierInvitationDetailsResource(SupplierInvitationDetailsService supplierInvitationDetailsService) {
         this.supplierInvitationDetailsService = supplierInvitationDetailsService;

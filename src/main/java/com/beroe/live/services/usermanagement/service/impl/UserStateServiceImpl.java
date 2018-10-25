@@ -25,9 +25,9 @@ public class UserStateServiceImpl implements UserStateService {
 
     private final Logger log = LoggerFactory.getLogger(UserStateServiceImpl.class);
 
-    private final UserStateRepository userStateRepository;
+    private UserStateRepository userStateRepository;
 
-    private final UserStateMapper userStateMapper;
+    private UserStateMapper userStateMapper;
 
     public UserStateServiceImpl(UserStateRepository userStateRepository, UserStateMapper userStateMapper) {
         this.userStateRepository = userStateRepository;
