@@ -30,7 +30,7 @@ public class UserProfileResource {
 
     private static final String ENTITY_NAME = "usermanagementUserProfile";
 
-    private final UserProfileService userProfileService;
+    private UserProfileService userProfileService;
 
     public UserProfileResource(UserProfileService userProfileService) {
         this.userProfileService = userProfileService;

@@ -25,9 +25,9 @@ public class InvitationServiceImpl implements InvitationService {
 
     private final Logger log = LoggerFactory.getLogger(InvitationServiceImpl.class);
 
-    private final InvitationRepository invitationRepository;
+    private InvitationRepository invitationRepository;
 
-    private final InvitationMapper invitationMapper;
+    private InvitationMapper invitationMapper;
 
     public InvitationServiceImpl(InvitationRepository invitationRepository, InvitationMapper invitationMapper) {
         this.invitationRepository = invitationRepository;

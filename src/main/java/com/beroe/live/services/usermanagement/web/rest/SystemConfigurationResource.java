@@ -29,7 +29,7 @@ public class SystemConfigurationResource {
 
     private static final String ENTITY_NAME = "usermanagementSystemConfiguration";
 
-    private final SystemConfigurationService systemConfigurationService;
+    private SystemConfigurationService systemConfigurationService;
 
     public SystemConfigurationResource(SystemConfigurationService systemConfigurationService) {
         this.systemConfigurationService = systemConfigurationService;

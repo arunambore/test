@@ -26,9 +26,9 @@ public class UserProfileServiceImpl implements UserProfileService {
 
     private final Logger log = LoggerFactory.getLogger(UserProfileServiceImpl.class);
 
-    private final UserProfileRepository userProfileRepository;
+    private UserProfileRepository userProfileRepository;
 
-    private final UserProfileMapper userProfileMapper;
+    private UserProfileMapper userProfileMapper;
 
     public UserProfileServiceImpl(UserProfileRepository userProfileRepository, UserProfileMapper userProfileMapper) {
         this.userProfileRepository = userProfileRepository;
