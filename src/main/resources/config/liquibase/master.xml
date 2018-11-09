@@ -13,6 +13,7 @@
     <include file="config/liquibase/changelog/20181005100035_added_entity_CompanyDomain.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20181005100036_added_entity_Invitation.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20181005100037_added_entity_SupplierInvitationDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181109091959_added_entity_RestrictedDomains.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20181005100030_added_entity_constraints_UserProfile.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20181005100031_added_entity_constraints_UserState.xml" relativeToChangelogFile="false"/>
