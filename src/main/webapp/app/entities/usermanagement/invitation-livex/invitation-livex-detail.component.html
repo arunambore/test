@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invitation">
+            <h2><span>Invitation</span> {{invitation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span ngbTooltip="Key is UUID which can be used to fetch details about all the child SupplierDataRequests
+
+It could be sent in the email and is used to populate the request details for the company user">Key</span></dt>
+                <dd>
+                    <span>{{invitation.key}}</span>
+                </dd>
+                <dt><span>Pin</span></dt>
+                <dd>
+                    <span>{{invitation.pin}}</span>
+                </dd>
+                <dt><span>Invitation Date</span></dt>
+                <dd>
+                    <span>{{invitation.invitationDate}}</span>
+                </dd>
+                <dt><span ngbTooltip="validTill represents the date till when this invitation is vaild. If someone tries to onboard after this date, registration will be rejected.">Valid Till</span></dt>
+                <dd>
+                    <span>{{invitation.validTill}}</span>
+                </dd>
+                <dt><span ngbTooltip="If we need to deactivate / invalidate any invitation, set its isInvalid attribute to true">Is Invalid</span></dt>
+                <dd>
+                    <span>{{invitation.isInvalid}}</span>
+                </dd>
+                <dt><span>User Profile</span></dt>
+                <dd>
+                    <div *ngIf="invitation.userProfileId">
+                        <a [routerLink]="['/user-profile-livex', invitation.userProfileId, 'view']">{{invitation.userProfileId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Company</span></dt>
+                <dd>
+                    <div *ngIf="invitation.companyId">
+                        <a [routerLink]="['/company-livex', invitation.companyId, 'view']">{{invitation.companyId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Supplier Invitation Details</span></dt>
+                <dd>
+                    <div *ngIf="invitation.supplierInvitationDetailsId">
+                        <a [routerLink]="['/supplier-invitation-details-livex', invitation.supplierInvitationDetailsId, 'view']">{{invitation.supplierInvitationDetailsId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invitation-livex', invitation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

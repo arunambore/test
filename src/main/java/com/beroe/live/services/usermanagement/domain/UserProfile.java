@@ -31,7 +31,7 @@ public class UserProfile implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @NotNull

@@ -25,9 +25,9 @@ public class ConfigurationApplicabilityServiceImpl implements ConfigurationAppli
 
     private final Logger log = LoggerFactory.getLogger(ConfigurationApplicabilityServiceImpl.class);
 
-    private ConfigurationApplicabilityRepository configurationApplicabilityRepository;
+    private final ConfigurationApplicabilityRepository configurationApplicabilityRepository;
 
-    private ConfigurationApplicabilityMapper configurationApplicabilityMapper;
+    private final ConfigurationApplicabilityMapper configurationApplicabilityMapper;
 
     public ConfigurationApplicabilityServiceImpl(ConfigurationApplicabilityRepository configurationApplicabilityRepository, ConfigurationApplicabilityMapper configurationApplicabilityMapper) {
         this.configurationApplicabilityRepository = configurationApplicabilityRepository;

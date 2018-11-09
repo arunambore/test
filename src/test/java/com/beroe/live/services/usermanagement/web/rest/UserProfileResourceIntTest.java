@@ -59,7 +59,7 @@ public class UserProfileResourceIntTest {
 
     @Autowired
     private UserProfileMapper userProfileMapper;
-    
+
     @Autowired
     private UserProfileService userProfileService;
 

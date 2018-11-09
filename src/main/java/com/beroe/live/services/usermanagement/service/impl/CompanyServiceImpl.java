@@ -26,9 +26,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     private final Logger log = LoggerFactory.getLogger(CompanyServiceImpl.class);
 
-    private CompanyRepository companyRepository;
+    private final CompanyRepository companyRepository;
 
-    private CompanyMapper companyMapper;
+    private final CompanyMapper companyMapper;
 
     public CompanyServiceImpl(CompanyRepository companyRepository, CompanyMapper companyMapper) {
         this.companyRepository = companyRepository;

@@ -64,7 +64,7 @@ public class InvitationResourceIntTest {
 
     @Autowired
     private InvitationMapper invitationMapper;
-    
+
     @Autowired
     private InvitationService invitationService;
 

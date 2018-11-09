@@ -25,9 +25,9 @@ public class SystemConfigurationServiceImpl implements SystemConfigurationServic
 
     private final Logger log = LoggerFactory.getLogger(SystemConfigurationServiceImpl.class);
 
-    private SystemConfigurationRepository systemConfigurationRepository;
+    private final SystemConfigurationRepository systemConfigurationRepository;
 
-    private SystemConfigurationMapper systemConfigurationMapper;
+    private final SystemConfigurationMapper systemConfigurationMapper;
 
     public SystemConfigurationServiceImpl(SystemConfigurationRepository systemConfigurationRepository, SystemConfigurationMapper systemConfigurationMapper) {
         this.systemConfigurationRepository = systemConfigurationRepository;

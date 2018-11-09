@@ -50,7 +50,7 @@ public class CompanyResourceIntTest {
 
     @Autowired
     private CompanyMapper companyMapper;
-    
+
     @Autowired
     private CompanyService companyService;
 

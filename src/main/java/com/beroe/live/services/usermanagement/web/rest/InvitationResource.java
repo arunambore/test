@@ -29,7 +29,7 @@ public class InvitationResource {
 
     private static final String ENTITY_NAME = "usermanagementInvitation";
 
-    private InvitationService invitationService;
+    private final InvitationService invitationService;
 
     public InvitationResource(InvitationService invitationService) {
         this.invitationService = invitationService;

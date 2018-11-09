@@ -30,7 +30,7 @@ public class CompanyResource {
 
     private static final String ENTITY_NAME = "usermanagementCompany";
 
-    private CompanyService companyService;
+    private final CompanyService companyService;
 
     public CompanyResource(CompanyService companyService) {
         this.companyService = companyService;

@@ -53,7 +53,7 @@ public class SystemConfigurationResourceIntTest {
 
     @Autowired
     private SystemConfigurationMapper systemConfigurationMapper;
-    
+
     @Autowired
     private SystemConfigurationService systemConfigurationService;
 
