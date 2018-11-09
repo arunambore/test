@@ -54,7 +54,7 @@ public class SupplierInvitationDetailsResourceIntTest {
 
     @Autowired
     private SupplierInvitationDetailsMapper supplierInvitationDetailsMapper;
-    
+
     @Autowired
     private SupplierInvitationDetailsService supplierInvitationDetailsService;
 

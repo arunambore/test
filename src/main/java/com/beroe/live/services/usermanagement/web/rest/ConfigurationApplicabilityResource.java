@@ -29,7 +29,7 @@ public class ConfigurationApplicabilityResource {
 
     private static final String ENTITY_NAME = "usermanagementConfigurationApplicability";
 
-    private ConfigurationApplicabilityService configurationApplicabilityService;
+    private final ConfigurationApplicabilityService configurationApplicabilityService;
 
     public ConfigurationApplicabilityResource(ConfigurationApplicabilityService configurationApplicabilityService) {
         this.configurationApplicabilityService = configurationApplicabilityService;

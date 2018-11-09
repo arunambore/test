@@ -50,7 +50,7 @@ public class ConfigurationApplicabilityResourceIntTest {
 
     @Autowired
     private ConfigurationApplicabilityMapper configurationApplicabilityMapper;
-    
+
     @Autowired
     private ConfigurationApplicabilityService configurationApplicabilityService;
 

@@ -58,7 +58,7 @@ public class UserStateResourceIntTest {
 
     @Autowired
     private UserStateMapper userStateMapper;
-    
+
     @Autowired
     private UserStateService userStateService;
 

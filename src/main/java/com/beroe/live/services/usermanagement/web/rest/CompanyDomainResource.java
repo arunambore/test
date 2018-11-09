@@ -29,7 +29,7 @@ public class CompanyDomainResource {
 
     private static final String ENTITY_NAME = "usermanagementCompanyDomain";
 
-    private CompanyDomainService companyDomainService;
+    private final CompanyDomainService companyDomainService;
 
     public CompanyDomainResource(CompanyDomainService companyDomainService) {
         this.companyDomainService = companyDomainService;

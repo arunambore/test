@@ -26,9 +26,9 @@ public class SupplierInvitationDetailsServiceImpl implements SupplierInvitationD
 
     private final Logger log = LoggerFactory.getLogger(SupplierInvitationDetailsServiceImpl.class);
 
-    private SupplierInvitationDetailsRepository supplierInvitationDetailsRepository;
+    private final SupplierInvitationDetailsRepository supplierInvitationDetailsRepository;
 
-    private SupplierInvitationDetailsMapper supplierInvitationDetailsMapper;
+    private final SupplierInvitationDetailsMapper supplierInvitationDetailsMapper;
 
     public SupplierInvitationDetailsServiceImpl(SupplierInvitationDetailsRepository supplierInvitationDetailsRepository, SupplierInvitationDetailsMapper supplierInvitationDetailsMapper) {
         this.supplierInvitationDetailsRepository = supplierInvitationDetailsRepository;

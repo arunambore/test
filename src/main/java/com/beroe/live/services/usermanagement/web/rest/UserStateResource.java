@@ -29,7 +29,7 @@ public class UserStateResource {
 
     private static final String ENTITY_NAME = "usermanagementUserState";
 
-    private UserStateService userStateService;
+    private final UserStateService userStateService;
 
     public UserStateResource(UserStateService userStateService) {
         this.userStateService = userStateService;
