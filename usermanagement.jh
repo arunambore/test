@@ -77,6 +77,10 @@ entity SupplierInvitationDetails {
     dataProvider SupplierDataProvider required
 }
 
+entity RestrictedDomains{
+	domainName String required
+}
+
 enum SupplierDataProvider {
 	DNB, DVB
 }

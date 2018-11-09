@@ -54,6 +54,7 @@ public class CacheConfiguration {
             cm.createCache(com.beroe.live.services.usermanagement.domain.Invitation.class.getName(), jcacheConfiguration);
             cm.createCache(com.beroe.live.services.usermanagement.domain.SupplierInvitationDetails.class.getName(), jcacheConfiguration);
             cm.createCache(com.beroe.live.services.usermanagement.domain.Company.class.getName() + ".userProfiles", jcacheConfiguration);
+            cm.createCache(com.beroe.live.services.usermanagement.domain.RestrictedDomains.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
