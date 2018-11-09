@@ -10,7 +10,9 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20181109091959",
+
+    "changelogDate": "20181109091943",
+
     "entityTableName": "restricted_domains",
     "dto": "mapstruct",
     "pagination": "no",
